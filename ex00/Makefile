@@ -10,19 +10,20 @@
 #                                                                              #
 # **************************************************************************** #
 
-NMAE = megaphone
+NAME = megaphone
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all : $(NAME)
+all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
 clean:
 	rm -rf $(OBJS)
 
@@ -32,4 +33,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-

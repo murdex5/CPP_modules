@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <cctype>
-using namespace std;
+
 
 int main(int argc, char **argv)
 {
@@ -22,11 +22,15 @@ int main(int argc, char **argv)
         {
             for (int j = 0; argv[i][j]; j++)
             {
-                cout << (char)toupper(argv[i][j]);
+                std::cout << (char)toupper(argv[i][j]);
             }
             std::cout << " ";
         }
         std::cout << std::endl;
+    }
+    else
+    {
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     }
     return 0;
 }

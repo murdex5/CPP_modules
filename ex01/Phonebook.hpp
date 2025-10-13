@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 13:01:12 by kadferna          #+#    #+#             */
-/*   Updated: 2025/10/11 13:01:15 by kadferna         ###   ########.fr       */
+/*   Updated: 2025/10/13 13:05:59 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
-
-
-class Phonebook {
-    private:
-        char *darksest_secret;
-    public:
-        char *fist_name;
-        char *last_name;
-        float phonenumber;
-        char *nickname;
-};
+#include "Contact.hpp"
 
 #endif

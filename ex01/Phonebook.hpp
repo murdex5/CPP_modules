@@ -13,6 +13,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include <sstream>
 #include "./Contact.hpp"
 
 class Phonebook
@@ -25,8 +26,8 @@ class Phonebook
     public:
         Phonebook();
 		void add_contact();
-		void search_contact() const;
-		void display_contatct(int index) const;
+		//void search_contact() const;
+		void display_contact(int index) const;
 };
 
 #endif

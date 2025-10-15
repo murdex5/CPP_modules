@@ -12,9 +12,10 @@
 
 NAME = phonebook
 CC = g++
-INCLUDES - ./Phonebook.cpp
+INCLUDES = ./Phonebook.hpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = ./Phonebook.cpp
+SRCS = ./Phonebook.cpp \
+		./main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

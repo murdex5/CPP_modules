@@ -49,7 +49,7 @@ void Phonebook::add_contact()
     }
 };
 
-void Phonebook::display_contatct(int index) const
+void Phonebook::display_contact(int index) const
 {
     std::cout << "\n--- Contact Details ---" << std::endl;
     std::cout << "First Name: " << contacts[index].getFirstName() << std::endl;

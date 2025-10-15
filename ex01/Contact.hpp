@@ -27,8 +27,8 @@ class Contact
 		Contact()
 			: first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("") {};
 		Contact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
-			: first_name(std::move(fn)), last_name(std::move(ln)), nickname(std::move(nn)), 
-				phone_number(std::move(pn)), darkest_secret(std::move(ds)) {};
+			: first_name(fn), last_name(ln), nickname(nn), 
+				phone_number(pn), darkest_secret(ds) {};
 		
 		const std::string& getFirstName() const { return  first_name; };
 		const std::string& getLastName() const { return last_name; };

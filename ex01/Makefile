@@ -12,8 +12,9 @@
 
 NAME = phonebook
 CC = g++
+INCLUDES - ./Phonebook.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = megaphone.cpp
+SRCS = ./Phonebook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -22,7 +23,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

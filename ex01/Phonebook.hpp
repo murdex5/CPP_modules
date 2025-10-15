@@ -13,6 +13,20 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Contact.hpp"
+#include "./Contact.hpp"
+
+class Phonebook
+{
+    private:
+        Contact contacts[8];
+        int contact_count;
+        int oldest_index;
+    
+    public:
+        Phonebook();
+		void add_contact();
+		void search_contact() const;
+		void display_contatct(int index) const;
+};
 
 #endif

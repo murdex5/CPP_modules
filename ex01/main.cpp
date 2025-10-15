@@ -22,12 +22,30 @@ std::string get_input()
     return input;
 }
 
+void add_entry(Phonebook book) {
+    std::string str_index;
+    int i = 0;
+
+    std::cout << "Enter the index: ";
+    std::getline(std::cin, str_index);
+    std::stringstream ss(str_index);
+    if (ss >> i) {
+        if (i <= 8 && i >= 0) {
+            book.display_contact(i);
+        } else {
+            std::cout << "Please enter a valid index. (0-8)" << std::endl;
+            add_entry(book);
+        }
+    } else {
+        std::cout << "Please enter a valid number." << std::endl;
+        add_entry(book);
+    }
+};
+
 int main(void)
 {
     Phonebook book;
     std::string input;
-    std::string str_index;
-    int i;
 
     while (1)  {
         input = get_input();
@@ -35,17 +53,7 @@ int main(void)
             if (input.compare("ADD") == 0) {
                 book.add_contact();
             } else if (input.compare("SEARCH") == 0) {
-                std::cout << "Enter the index: ";
-                std::getline(std::cin, str_index);
-                std::stringstream ss(str_index);
-                if (ss << i) {
-                    i = 0;
-                }
-                if (i <= 8 || i >= 0) {
-                    book.display_contact(i);
-                } else {
-                    std::cout << "Please enter a valid index." << std::endl;
-                }
+                add_entry(book);
             } else if (input.compare("EXIT") == 0) {
                 std::cout << "Program is exiting!!!" << std::endl;
                 return 0;

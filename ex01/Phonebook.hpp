@@ -11,23 +11,26 @@
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <sstream>
-#include "./Contact.hpp"
+# include "./Contact.hpp"
+# include <iomanip>
+# include <sstream>
 
 class Phonebook
 {
     private:
-        Contact contacts[8];
-        int contact_count;
-        int oldest_index;
-    
-    public:
-        Phonebook();
-		void add_contact();
-		//void search_contact() const;
-		void display_contact(int index) const;
+    int contact_count;
+	int oldest_index;
+
+  public:
+	Contact contacts[8];
+	Phonebook();
+	void add_contact();
+	// void search_contact() const;
+	void display_contact(int index) const;
+    int getContactCount() const { return contact_count; };
+    int getOldestIndex() const { return oldest_index; };
 };
 
 #endif

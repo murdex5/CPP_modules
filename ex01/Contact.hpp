@@ -39,6 +39,9 @@ class Contact
 		void setFirstName(const std::string& fn) { first_name = fn; };
 		void setLastName(const std::string& ln) { last_name = ln; };
 		void setNickName(const std::string& nn) { nickname = nn; };
-		void setPhoneNumber(const std::string& pn) { phone_number = pn; };
 		void setDarkestSecret(const std::string& ds) { darkest_secret = ds; };
+
+		bool setPhoneNumber(const std::string& pn);
 };
+
+

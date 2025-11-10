@@ -28,17 +28,20 @@ std::string intToString(int i)
     return temp.str();
 }
 
-void	printTruncated(const std::string &text, int width)
+std::string printTruncated(const std::string &text, int width)
 {
-	if (text.length() > (size_t)width)
-	{
-		std::cout << std::setw(width) << std::right << text.substr(0, width - 1)
-			+ ".";
-	}
-	else
-	{
-		std::cout << std::setw(width) << std::right << text;
-	}
+    if (width <= 0)
+        return std::string();
+
+    std::string truncated;
+    if (text.length() > static_cast<std::size_t>(width))
+        truncated = text.substr(0, width - 1) + ".";
+    else
+        truncated = text;
+
+    std::ostringstream oss;
+    oss << std::setw(width) << std::right << truncated;
+    return oss.str();
 }
 
 std::string centerString(const std::string &text, int width)
@@ -63,7 +66,9 @@ void	display_all(Phonebook book)
 {
 	const int	total_width = 45;
 
-	// my rec tw = 131 && w = 25
+	std::cout << std::endl;
+	std::cout << std::string(total_width, '-') << std::endl;
+	std::cout << "|" << centerString("PHONEBOOK VOL 1", total_width - 2) << "|" << std::endl;
 	std::cout << std::string(total_width, '-') << std::endl;
 	std::cout << "|" << centerString("Index", 10)
         << "|" << centerString("First Name", 10)
@@ -76,12 +81,13 @@ void	display_all(Phonebook book)
 	for (int i = 0; i < book.getContactCount(); i++)
 	{
 		std::cout << "|" << centerString(intToString(i), 10) 
-            << "|" << centerString(book.contacts[i].getFirstName(), 10)
-            << "|" << centerString(book.contacts[i].getLastName(), 10)
-            << "|" << centerString(book.contacts[i].getNickName(), 10)
+            << "|" << centerString(printTruncated(book.contacts[i].getFirstName(), 10), 10)
+            << "|" << centerString(printTruncated(book.contacts[i].getLastName(), 10), 10)
+            << "|" << centerString(printTruncated(book.contacts[i].getNickName(), 10), 10)
             << "|" << std::endl;
 		std::cout << std::string(total_width, '-') << std::endl;
 	}
+	std::cout << std::endl;
 }
 
 void	add_entry(Phonebook book)
@@ -113,6 +119,8 @@ int	main(void)
 {
     Phonebook book;
 	std::string input;
+
+	std::cout << "The Commands: 'ADD', 'SEARCH', 'EXIT'" << std::endl;
 	while (1)
 	{
 		input = get_input();

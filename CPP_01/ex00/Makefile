@@ -5,18 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kadferna <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/10 15:42:58 by kadferna          #+#    #+#              #
-#    Updated: 2025/10/10 15:43:00 by kadferna         ###   ########.fr        #
+#    Created: 2025/11/12 10:27:46 by kadferna          #+#    #+#              #
+#    Updated: 2025/11/12 10:27:49 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Phonebook
+
+NAME = BraiiiiiiinnnzzzZ
+
 CC = g++
-INCLUDES = ./Phonebook.hpp
+
+INCLUDES = ./Zombie.hpp
+
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = ./Phonebook.cpp \
-		./Contact.cpp \
+
+SRCS = ./Zombie.cpp \
+		./newZombie.cpp \
+		./randomChump.cpp \
 		./main.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

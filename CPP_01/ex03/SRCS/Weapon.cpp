@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../INCLUDES/Weapon.hpp"
 
+Weapon::~Weapon() 
+{
+    std::cout << type << " is being destroyed." << std::endl;
+}
+
+
+void Weapon::setType(std::string _type)
+{
+    type = _type;
+}
+
+const std::string &Weapon::getType(void) const 
+{
+    return type;
+}

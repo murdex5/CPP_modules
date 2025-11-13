@@ -10,4 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../INCLUDES/HumanB.hpp"
 
+HumanB::~HumanB() {
+    std::cout << name << " is dead." << std::endl;
+}
+
+void HumanB::setWeapon(Weapon &_weopon)
+{
+    this->weapon = &_weopon;
+}
+
+void HumanB::attack()
+{
+    if (weapon)
+        std::cout << name << " attacked with their " << weapon->getType() << std::endl;
+}

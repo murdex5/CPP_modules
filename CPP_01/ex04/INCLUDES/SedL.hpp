@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
-
+#include <fstream>
 #include "./File.hpp"
 
 #endif

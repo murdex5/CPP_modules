@@ -18,10 +18,11 @@
 class File
 {
     private:
+        
+    public:
         std::string fileName;
         std::string strOld;
         std::string strNew;
-    public:
         File(std::string _fileName, std::string _strOld, std::string _strNew) : fileName(_fileName), strOld(_strOld), strNew(_strNew) {};
         ~File();
 };

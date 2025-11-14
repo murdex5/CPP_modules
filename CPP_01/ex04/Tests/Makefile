@@ -5,31 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kadferna <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/13 15:28:30 by kadferna          #+#    #+#              #
-#    Updated: 2025/11/13 15:28:32 by kadferna         ###   ########.fr        #
+#    Created: 2025/11/14 14:33:57 by kadferna          #+#    #+#              #
+#    Updated: 2025/11/14 14:33:59 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = SedL
+NAME = Tests
 
 CC = g++
 
-INCLUDE_DIR = ./INCLUDES
-
-SRCS_DIR = ./SRCS
-
-INCLUDES = ${INCLUDE_DIR}/File.hpp \
- 			${INCLUDE_DIR}/SedL.hpp 
+SRCS = tests.cpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  ${SRCS_DIR}/File.cpp \
-		${SRCS_DIR}/main.cpp
+SRCS =  ./Tests.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(NAME)
+ll: $(NAME)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -37,19 +30,12 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
-test:
-	@echo "🛠  Creating test Files"
-	@$(MAKE) -C ./Tests
-	@sudo ./Tests/Tests
-	@$(MAKE) -C ./Tests fclean
-
 clean:
 	rm -rf $(OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
-	@rm -rf ../ReadFile.txt
-	
+
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

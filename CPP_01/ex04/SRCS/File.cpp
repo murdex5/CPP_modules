@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   File.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 15:34:40 by kadferna          #+#    #+#             */
-/*   Updated: 2025/11/13 15:34:42 by kadferna         ###   ########.fr       */
+/*   Created: 2025/11/14 11:49:17 by kadferna          #+#    #+#             */
+/*   Updated: 2025/11/14 11:49:18 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/SedL.hpp"
+#include "../INCLUDES/File.hpp"
 
-int main(int argc, char *argv[])
-{
-    if (argc != 4)
-    {
-        std::cout << "Usage: ./SedL ./filename s1 s2" << std::endl;
-        argv[0] = NULL;
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
+File::~File() {
+    std::cout << fileName << " is being removed." << std::endl;
 }

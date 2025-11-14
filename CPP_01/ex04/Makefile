@@ -20,16 +20,11 @@ INCLUDE_DIR = ./INCLUDES
 SRCS_DIR = ./SRCS
 
 
-INCLUDES =  ${INCLUDE_DIR}/Weapon.hpp \ 
-			${INCLUDE_DIR}/HumanA.hpp \
-			${INCLUDE_DIR}/HumanB.hpp
+ INCLUDES =  ${INCLUDE_DIR}/SedL.hpp 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ${SRCS_DIR}/HumanA.cpp \
-		${SRCS_DIR}/HumanB.cpp \
-		${SRCS_DIR}/Weapon.cpp \
-		${SRCS_DIR}/main.cpp
+SRCS = ${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

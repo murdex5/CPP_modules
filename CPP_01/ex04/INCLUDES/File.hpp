@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 15:34:40 by kadferna          #+#    #+#             */
-/*   Updated: 2025/11/13 15:34:42 by kadferna         ###   ########.fr       */
+/*   Created: 2025/11/14 11:44:02 by kadferna          #+#    #+#             */
+/*   Updated: 2025/11/14 11:44:03 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../INCLUDES/SedL.hpp"
+#ifndef FILE_HPP
+#define FILE_HPP
 
-int main(int argc, char *argv[])
+#include "./SedL.hpp"
+
+class File
 {
-    if (argc != 4)
-    {
-        std::cout << "Usage: ./SedL ./filename s1 s2" << std::endl;
-        argv[0] = NULL;
-        return EXIT_FAILURE;
-    }
+    private:
+        std::string fileName;
+        std::string strOld;
+        std::string strNew;
+    public:
+        File(std::string _fileName, std::string _strOld, std::string _strNew) : fileName(_fileName), strOld(_strOld), strNew(_strNew) {};
+        ~File();
+};
 
-    return EXIT_SUCCESS;
-}
+
+
+#endif

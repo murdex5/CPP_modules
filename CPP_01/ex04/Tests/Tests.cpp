@@ -27,7 +27,7 @@ int main(void)
         "Memory swap operations can impact performance significantly.",
         "Swap Now?"
     };
-    std::ofstream ReadFile("../ReadFile.txt");
+    std::ofstream ReadFile("./ReadFile");
     for (int i = 0; i < 1000; i++)
     {
         int j = std::rand() % 7;

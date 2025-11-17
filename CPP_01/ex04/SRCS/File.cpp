@@ -12,6 +12,32 @@
 
 #include "../INCLUDES/File.hpp"
 
-File::~File() {
+File::~File()
+{
     std::cout << fileName << " is being removed." << std::endl;
+}
+
+void File::processFileName()
+{
+    fileName = fileName + ".replace";
+}
+
+void File::processFileContent()
+{
+    for (size_t i = 0; i < fileContent.size(); i++)
+    {
+        fileContent[i] = swapVals(fileContent[i], oldString, newString);
+    }
+}
+
+const char *File::getFileName()
+{
+    processFileName();
+    return fileName.c_str();
+}
+
+std::vector<std::string>& File::getFileContent()
+{
+    processFileContent();
+    return fileContent;
 }

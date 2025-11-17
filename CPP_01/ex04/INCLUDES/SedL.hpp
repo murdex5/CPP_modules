@@ -16,6 +16,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <vector>
 #include "./File.hpp"
+
+std::string swapVals(std::string line, std::string s1, std::string s2);
 
 #endif

@@ -10,7 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = SedL
 
 CC = g++
@@ -48,7 +47,8 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	@rm -rf ../ReadFile.txt
+	@rm -rf ./ReadFile
+	@rm -rf ./ReadFile.replace
 	
 re: fclean all
 

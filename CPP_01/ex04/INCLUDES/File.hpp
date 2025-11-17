@@ -18,13 +18,18 @@
 class File
 {
     private:
-        
-    public:
         std::string fileName;
-        std::string strOld;
-        std::string strNew;
-        File(std::string _fileName, std::string _strOld, std::string _strNew) : fileName(_fileName), strOld(_strOld), strNew(_strNew) {};
+        std::string oldString;
+        std::string newString;
+        std::vector<std::string>& fileContent;
+        void processFileName();
+    public:
+        File(std::string _fileName, std::string _oldString, std::string  _newString, std::vector<std::string>& fc) :
+                fileName(_fileName), oldString(_oldString), newString(_newString), fileContent(fc) {};
         ~File();
+        void processFileContent();
+        const char *getFileName();
+        std::vector<std::string>& getFileContent();
 };
 
 

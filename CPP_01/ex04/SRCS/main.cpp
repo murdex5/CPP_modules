@@ -12,21 +12,73 @@
 
 #include "../INCLUDES/SedL.hpp"
 
+std::string swapVals(std::string line, std::string s1, std::string s2)
+{
+    std::string newLine;
+    //s1 += " "; // To Detect only s1 occureneces;
+   // s2 += " "; 
+    for (size_t i = 0; i < line.size(); i++)
+    {
+        if (line[i] == s1[0]) {
+            size_t count = 0;;
+            bool h = true;
+            int f = i;
+
+            while (h == true && s1.size() > count)
+            {
+                if (line[f] == s1[count])
+                {
+                    f++;
+                    count++;
+                } else {
+                    h = false;
+                    newLine += line[i];
+                }
+            }
+            if (h == true)
+            {
+                if (line[f+1] != ' ') {
+                    count = 0;
+                    while (s2.size() > count)
+                    {
+                        newLine += s2[count];
+                        count++;
+                    }
+                    i = f - 1;
+                }
+            }
+        } else {
+            newLine += line[i];
+        }
+    }
+    return newLine;
+}
+
 int main(int argc, char *argv[])
 {
+    std::string myStrng;
+    std::vector<std::string> lines;
+
     if (argc != 4)
     {
         std::cout << "Usage: ./SedL ./filename s1 s2" << std::endl;
         return EXIT_FAILURE;
     }
-    std::string myStrng;
-
+    // Reading the file
     std::ifstream MyReadFile(argv[1]);
-
     while (std::getline(MyReadFile, myStrng))
     {
-        std::cout << myStrng << std::endl;
+        lines.push_back(myStrng);
+        lines.push_back("\n");
     }
     MyReadFile.close();
+    File WriteFile(argv[1], argv[2], argv[3], lines);
+    std::ofstream MyWriteFile(WriteFile.getFileName());
+    std::vector<std::string> _modLines = WriteFile.getFileContent();
+    for (size_t i = 0; i < _modLines.size(); i++)
+    {
+        MyWriteFile << _modLines[i];
+    }
+    MyWriteFile.close();
     return EXIT_SUCCESS;
 }

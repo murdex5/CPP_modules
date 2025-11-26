@@ -39,7 +39,7 @@ $(NAME): $(OBJS)
 test:
 	@echo "🛠  Creating test Files"
 	@$(MAKE) -C ./Tests
-	@sudo ./Tests/Tests
+	@./Tests/Tests
 	@$(MAKE) -C ./Tests fclean
 
 clean:
@@ -49,6 +49,8 @@ fclean: clean
 	rm -rf $(NAME)
 	@rm -rf ./ReadFile
 	@rm -rf ./ReadFile.replace
+	@rm -rf ./ReadFile2
+	@rm -rf ./ReadFile2.replace
 	
 re: fclean all
 

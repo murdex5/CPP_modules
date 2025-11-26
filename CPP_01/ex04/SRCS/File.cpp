@@ -14,7 +14,6 @@
 
 File::~File()
 {
-    std::cout << fileName << " is being removed." << std::endl;
 }
 
 void File::processFileName()

@@ -15,8 +15,6 @@
 std::string swapVals(std::string line, std::string s1, std::string s2)
 {
     std::string newLine;
-    //s1 += " "; // To Detect only s1 occureneces;
-   // s2 += " "; 
     for (size_t i = 0; i < line.size(); i++)
     {
         if (line[i] == s1[0]) {
@@ -64,8 +62,13 @@ int main(int argc, char *argv[])
         std::cout << "Usage: ./SedL ./filename s1 s2" << std::endl;
         return EXIT_FAILURE;
     }
-    // Reading the file
+    // Reading the fiile
     std::ifstream MyReadFile(argv[1]);
+    if (!MyReadFile.is_open())
+    {
+        std::cout << "Error \nFile: " << argv[1] << " does not exsist or cannot be opened."<< std::endl;
+        return EXIT_FAILURE;
+    }
     while (std::getline(MyReadFile, myStrng))
     {
         lines.push_back(myStrng);

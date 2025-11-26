@@ -51,9 +51,9 @@ void Harl::complain(std::string level)
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     fptr complains[5];
     complains[0] = &Harl::debug;
-    complains[1] = &Harl::error;
-    complains[2] = &Harl::info;
-    complains[3] = &Harl::warning;
+    complains[1] = &Harl::info;
+    complains[2] = &Harl::warning;
+    complains[3] = &Harl::error;
     complains[4] = NULL;
     for (int i = 0; i < 4; i++)
     {

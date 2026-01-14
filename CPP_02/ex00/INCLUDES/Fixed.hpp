@@ -13,7 +13,6 @@
 # include <iostream>
 # include <cstdlib>
 
-
 class Fixed {
     private:
         int numValue;

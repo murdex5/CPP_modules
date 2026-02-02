@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 13:27:36 by kadferna          #+#    #+#             */
-/*   Updated: 2026/01/30 13:27:39 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/02 12:14:03 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/02 12:14:05 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # include <cstdlib>
 
 class ClapTrap {
-    private:
+    protected:
        std::string name;
        int hit_points;
        int energy_points;

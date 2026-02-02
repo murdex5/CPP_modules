@@ -6,7 +6,7 @@
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:13:45 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 12:13:46 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/02 14:04:35 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ ClapTrap::ClapTrap(std::string _name)
     hit_points = 10;
     energy_points = 10;
     attack_dammage = 0;
-    std::cout << "ClapTrap constructor called\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -39,12 +38,14 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "ClapTrap Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target ) {
     if (energy_points <= 0)
         std::cout << "Not enough energy points\n";
+    else if (hit_points <= 0)
+        std::cout << "Not enough hit points: " << hit_points << std::endl;
     else
     {
         energy_points--;
@@ -54,8 +55,13 @@ void ClapTrap::attack(const std::string& target ) {
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    hit_points -= amount;
-    std::cout << "ClapTrap: " << name << " took damage" << ", causing " << amount << " points of demage to " << name << std::endl;
+    if (hit_points <= 0)
+        std::cout << "can not take more demage. current hit points: " << hit_points << std::endl;
+    else
+    {
+        hit_points -= amount;
+        std::cout << "ClapTrap: " << name << " took damage" << ", causing " << amount << " points of demage to " << name << std::endl;
+    }
 }
 
 void ClapTrap::beRepaired( unsigned int amount )

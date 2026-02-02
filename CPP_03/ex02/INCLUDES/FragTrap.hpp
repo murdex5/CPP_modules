@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 12:15:39 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 13:04:34 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/02 13:07:04 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/02 13:45:28 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <cstdlib>
-# include "../INCLUDES/ClapTrap.hpp"
+# include "../INCLUDES/ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class FragTrap : public ClapTrap {
     public:
-        ScavTrap(std::string _name);
-        void attack(const std::string& target);
-        void guardGate();
-        ~ScavTrap();
+        FragTrap(std::string name);
+        ~FragTrap();
+        void highFiveGuys( void );
 };
-
-std::ostream& operator<<(std::ostream& os, const ScavTrap& claptrap);

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 12:15:39 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 13:04:34 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/02 13:41:58 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/02 13:48:47 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <cstdlib>
-# include "../INCLUDES/ClapTrap.hpp"
+# include "../INCLUDES/FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
-    public:
-        ScavTrap(std::string _name);
-        void attack(const std::string& target);
-        void guardGate();
-        ~ScavTrap();
-};
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+    hit_points = 100;
+    energy_points = 100;
+    attack_dammage = 30;
+    std::cout << "FragTrap constructor called\n";
+}
 
-std::ostream& operator<<(std::ostream& os, const ScavTrap& claptrap);
+FragTrap::~FragTrap()
+{
+    std::cout << "FragTrap decstrctor called\n";
+}
+
+void FragTrap::highFiveGuys( void ) {
+    std::cout << "What a beautiful day! can i get a high five?\n";
+}

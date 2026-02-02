@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 13:28:14 by kadferna          #+#    #+#             */
-/*   Updated: 2026/01/30 13:28:16 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/02 12:13:34 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/02 12:13:35 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../INCLUDES/ClapTrap.hpp"
+# include "../INCLUDES/ScavTrap.hpp"
 
 int main( void )
 {
-    ClapTrap a("Malsha");
-
-    a.attack("enemy");
-    a.takeDamage(2);
-    a.beRepaired(2);
+    ScavTrap a("Malsha");
+    a.attack("Enemy");
+    a.takeDamage(333);
+    a.beRepaired(3333);
     return 0;
 }

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed2.0
+NAME = ClapTrap
 
 CC = g++
 
@@ -18,11 +18,11 @@ INCLUDE_DIR = ./INCLUDES
 
 SRCS_DIR = ./SRCS
 
-INCLUDES = ${INCLUDE_DIR}/Claptrap.hpp 
+INCLUDES = ${INCLUDE_DIR}/ClapTrap.hpp 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  ${SRCS_DIR}/Claptrap.cpp \
+SRCS =  ${SRCS_DIR}/ClapTrap.cpp \
 		${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

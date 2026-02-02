@@ -40,3 +40,31 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 ClapTrap::~ClapTrap() {
     std::cout << "Destructor called" << std::endl;
 }
+
+void ClapTrap::attack(const std::string& target ) {
+    if (energy_points <= 0)
+        std::cout << "Not enough energy points\n";
+    else
+    {
+        energy_points--;
+        std::cout << "ClapTrap: " << name << " attacks " << target << ", causing " << attack_dammage << " points of demage!" << std::endl;
+    }
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+    hit_points -= amount;
+    std::cout << "ClapTrap: " << name << " took damage" << ", causing " << amount << " points of demage to " << name << std::endl;
+}
+
+void ClapTrap::beRepaired( unsigned int amount )
+{
+    if (energy_points <= 0)
+        std::cout << "ClapTrap: "<< name << " cannot repiair due to the low energy points!\n";
+    else
+    {
+        hit_points += amount;
+        energy_points--;
+        std::cout << "ClapTrap: " << name << " repaird " << amount << " points of demage" << std::endl;
+    } 
+}

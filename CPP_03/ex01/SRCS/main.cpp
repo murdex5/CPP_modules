@@ -10,10 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../INCLUDES/Claptrap.hpp"
+# include "../INCLUDES/ClapTrap.hpp"
 
 int main( void )
 {
-    
+    ClapTrap a("Malsha");
+
+    a.attack("enemy");
+    a.takeDamage(2);
+    a.beRepaired(2);
     return 0;
 }

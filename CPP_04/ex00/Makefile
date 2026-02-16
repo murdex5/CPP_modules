@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
+#    By: kadferna <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/14 13:42:48 by kadferna          #+#    #+#              #
-#    Updated: 2026/02/14 13:44:11 by kadferna         ###   ########.fr        #
+#    Updated: 2026/02/16 12:04:33 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = Polymorphism
 
 CC = g++
 
@@ -18,15 +18,15 @@ INCLUDE_DIR = ./INCLUDES
 
 SRCS_DIR = ./SRCS
 
-INCLUDES = ${INCLUDE_DIR}/ClapTrap.hpp \
-                        ${INCLUDE_DIR}/ScavTrap.hpp \
-                        ${INCLUDE_DIR}/FragTrap.hpp \
+INCLUDES = ${INCLUDE_DIR}/Animal.hpp \
+                        ${INCLUDE_DIR}/Cat.hpp \
+                        ${INCLUDE_DIR}/Dog.hpp \
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  ${SRCS_DIR}/ClapTrap.cpp \
-                ${SRCS_DIR}/ScavTrap.cpp \
-                ${SRCS_DIR}/FragTrap.cpp \
+SRCS =  ${SRCS_DIR}/Animal.cpp \
+                ${SRCS_DIR}/Dog.cpp \
+                ${SRCS_DIR}/Cat.cpp \
                 ${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

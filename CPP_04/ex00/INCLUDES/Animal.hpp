@@ -1,13 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 13:45:41 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/16 12:01:12 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/14 13:47:45 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/16 11:58:16 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "INCLUDES/Cat.hpp"
+# include <iostream>
+# include <cstdlib>
+
+class Animal {
+
+    protected:
+        std::string type;
+    
+    public:
+        Animal();
+        ~Animal();
+        
+        void makeSound();
+};

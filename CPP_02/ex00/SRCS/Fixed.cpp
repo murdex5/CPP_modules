@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malshapraboth <marvin@42.fr>               +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 12:27:44 by malshapraboth     #+#    #+#             */
-/*   Updated: 2025/12/15 12:27:45 by malshapraboth    ###   ########.fr       */
+/*   Created: 2025/12/15 12:27:44 by malshaprabo       #+#    #+#             */
+/*   Updated: 2026/02/23 11:44:45 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ Fixed& Fixed::operator=(const Fixed &other)
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 };
+
+// Getters & Setters
 
 int Fixed::getRawBits( void ) const {
     std::cout << "getRawBits member function called" << std::endl;

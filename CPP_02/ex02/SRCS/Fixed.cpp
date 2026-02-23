@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 11:06:33 by kadferna          #+#    #+#             */
-/*   Updated: 2026/01/07 11:06:34 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/23 11:45:34 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ Fixed::Fixed(const float floatValue) {
     this->numValue = roundf(floatValue * ( 1 << bits));
 }
 
+// Getters & Setters
 int Fixed::getRawBits( void ) const {
     //std::cout << "getRawBits member function called" << std::endl;
     return this->numValue;

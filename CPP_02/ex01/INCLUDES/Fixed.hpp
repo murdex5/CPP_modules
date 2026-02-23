@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:39:10 by kadferna          #+#    #+#             */
-/*   Updated: 2025/12/27 13:39:11 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/23 11:44:58 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ class Fixed {
         Fixed(const int intValue);
         Fixed(const float floatValue);
         
+        // Getters & Setters
         int getRawBits( void ) const;
         void setRawBits( int const raw );
+        
         float toFloat ( void ) const;
         int toInt ( void ) const;
 };

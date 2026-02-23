@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
+/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:27:44 by malshaprabo       #+#    #+#             */
-/*   Updated: 2026/02/23 11:44:45 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/23 12:59:45 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Fixed::Fixed() : numValue(0) {
     std::cout << "Defaulet constructor called" << std::endl;
 };
-
 
 Fixed::Fixed(const Fixed &other)
 {

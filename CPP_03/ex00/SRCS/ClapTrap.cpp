@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 13:27:55 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 14:03:06 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:52:11 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,38 @@ void ClapTrap::beRepaired( unsigned int amount )
         energy_points--;
         std::cout << "ClapTrap: " << name << " repaird " << amount << " points of demage" << std::endl;
     } 
+}
+
+// Getter & Setters
+
+std::string const &ClapTrap::get_name(void) const {
+    return (this->name);
+}
+
+int const &ClapTrap::get_hp( void ) const {
+    return (this->hit_points);
+}
+
+int const &ClapTrap::get_energy_points( void ) const {
+    return (this->energy_points);
+}
+
+int const &ClapTrap::get_attak_points( void ) const {
+    return (this->attack_dammage);
+}
+
+void ClapTrap::set_name(std::string const &_name){
+    this->name = _name;
+}
+
+void ClapTrap::set_hp(int const &value) {
+    this->hit_points = value;
+}
+
+void ClapTrap::set_enerygy_points(int const &value) {
+    this->energy_points = value;
+}
+
+void ClapTrap::set_attack( int const &value) {
+    this->attack_dammage = value; 
 }

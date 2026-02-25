@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:14:03 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 12:14:05 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:50:51 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ class ClapTrap {
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+    
+    // Getter & Setters
+        std::string const &get_name( void ) const;
+        int const  &get_hp(void) const;
+        int const &get_energy_points(void) const;
+        int const &get_attak_points(void) const;
+
+        void set_name(std::string const &_name);
+        void set_hp(int const &value);
+        void set_enerygy_points(int const &value);
+        void set_attack(int const &value);
 };
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& claptrap);

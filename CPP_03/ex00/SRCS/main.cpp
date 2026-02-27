@@ -24,7 +24,7 @@ int main( void )
 }
 
 
-// TEsts
+// Testd
 /*
 int main( void )
 {

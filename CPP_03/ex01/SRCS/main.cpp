@@ -20,3 +20,30 @@ int main( void )
     a.beRepaired(3333);
     return 0;
 }
+
+// Tests
+/*
+int main( void )
+{
+    std::cout << "Testing Constructor Chaining" << std::endl;
+    ScavTrap scav("Serena");
+    ClapTrap clap("Clappy"); // Creating a standard ClapTrap for comparison
+
+    std::cout << "Testing Overridden Attack" << std::endl;
+    scav.attack("Enemy"); // Should use ScavTrap's attack
+    clap.attack("Enemy"); // Should use ClapTrap's attack
+
+    std::cout << "Testing Inherited Methods" << std::endl;
+    scav.takeDamage(30);  // ScavTrap has 100 HP, so it survives easily
+    scav.beRepaired(20);  // Should repair 20 HP, costing 1 energy
+
+    std::cout << "Testing Special Ability" << std::endl;
+    scav.guardGate();
+
+    std::cout << "Testing Death" << std::endl;
+    scav.takeDamage(150); // ScavTrap takes massive damage
+    scav.attack("Ghost"); 
+
+    return 0;
+}
+*/

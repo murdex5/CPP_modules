@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 12:13:45 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/25 13:51:44 by kadferna         ###   ########.fr       */
+/*   Created: 2026/01/30 13:27:55 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/25 13:52:11 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& claptrap);
 
-ClapTrap::ClapTrap(std::string _name)
+ClapTrap::ClapTrap(void): name("default")
 {
-    name = _name;
     hit_points = 10;
     energy_points = 10;
     attack_dammage = 0;
+    std::cout << "ClapTrap " << this->name << "created with a default constructor" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string const &_name) : name(_name)
+{
+    hit_points = 10;
+    energy_points = 10;
+    attack_dammage = 0;
+    std::cout << "ClapTrap " << this->name << " created." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
     *this = other;
+    std::cout << "ClapTrap " << this->name << " copied" << std::endl;
 }
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
     if (this != &other)
@@ -34,6 +43,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
         hit_points = other.hit_points;
         energy_points = other.energy_points;
     }
+    std::cout << "ClapTrap " << this->name << " copied with copuy opearator" << std::endl;
     return *this;
 }
 

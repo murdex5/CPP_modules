@@ -10,16 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <cstdlib>
+#ifndef SCAVTRAP_HPP
+
+# define SCAVTRAP_HPP
+
 # include "../INCLUDES/ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
     public:
-        ScavTrap(std::string _name);
+        ScavTrap(void);
+        ScavTrap(std::string const &_name);
+        ScavTrap(ScavTrap const &copy);
+        ScavTrap& operator=(const ScavTrap &other);
+        ~ScavTrap();
+
+        // Member function
         void attack(const std::string& target);
         void guardGate();
-        ~ScavTrap();
+        
 };
 
 std::ostream& operator<<(std::ostream& os, const ScavTrap& claptrap);
+
+# endif

@@ -12,18 +12,37 @@
 
 # include "../INCLUDES/FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+FragTrap::FragTrap(void)
+{
+    std::cout << "FragTrap from ClapTrap created with default constructor." << std::endl;
+}
+
+FragTrap::FragTrap(std::string const &_name) : ClapTrap(_name) {
     hit_points = 100;
     energy_points = 100;
     attack_dammage = 30;
-    std::cout << "FragTrap constructor called\n";
+    std::cout << "FragTrap from ClapTrap " <<this->name << " created with default constructor." << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const &copy) : ClapTrap(copy)
+{
+    std::cout << "FragTrap from ClapTrap " << this->name << " copied." << std::endl;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &copy)
+{
+    std::cout << "Assignment operator for FragTrap called." << std::endl;
+	ClapTrap::operator=(copy);
+	return (*this);
 }
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap decstrctor called\n";
+    std::cout << "FragTrap " << this->name << " decstrctor called\n";
 }
 
 void FragTrap::highFiveGuys( void ) {
     std::cout << "What a beautiful day! can i get a high five?\n";
 }
+
+std::ostream& operator<<(std::ostream& os, const FragTrap& claptrap);

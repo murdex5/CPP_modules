@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "../INCLUDES/ClapTrap.hpp"
+# include "../INCLUDES/ScavTrap.hpp"
 # include "../INCLUDES/FragTrap.hpp"
 
 int main( void )

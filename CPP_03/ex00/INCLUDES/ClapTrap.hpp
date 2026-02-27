@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CLAPTRAP_HPP
+
+# define CLAPTRAP_HPP
+
 # include <iostream>
 # include <cstdlib>
 
@@ -21,7 +25,8 @@ class ClapTrap {
        int attack_dammage;
     
     public:
-        ClapTrap(std::string _name);
+        ClapTrap( void );
+        ClapTrap(std::string const &_name);
         ClapTrap(const ClapTrap& other);
         ClapTrap& operator=(const ClapTrap &other);
         ~ClapTrap();
@@ -43,3 +48,5 @@ class ClapTrap {
 };
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& claptrap);
+
+# endif

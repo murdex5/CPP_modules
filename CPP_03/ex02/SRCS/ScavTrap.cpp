@@ -12,32 +12,53 @@
 
 # include "../INCLUDES/ScavTrap.hpp"
 
-std::ostream& operator<<(std::ostream& os, const ScavTrap& claptrap);
-
-ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
+ScavTrap::ScavTrap( void ) 
 {
-    hit_points = 100;
-    energy_points = 50;
-    attack_dammage = 20;
-    std::cout << "ScavTrap constructor called\n";
+    std::cout << "ScavTrap from ClapTrap created with default constructor." << std::endl;
 }
+
+ScavTrap::ScavTrap(std::string const &_name) : ClapTrap(_name)
+{
+    this->hit_points = 100;
+    this->energy_points = 50;
+    this->attack_dammage = 20;
+    std::cout << "ScavTrap from ClapTrap " << this->name << " created\n";
+}
+
+ScavTrap::ScavTrap(ScavTrap const &copy) : ClapTrap(copy)
+{
+    std::cout << "ScavTrap from ClapTrap " << this->name << " copied." << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
+{
+    std::cout << "Assignment operator for ScavTrap " << this->name << " called." << std::endl;
+	ClapTrap::operator=(copy);
+	return (*this);
+}
+
 void ScavTrap::attack(const std::string& target ) {
-    if (energy_points <= 0)
+    if (this->energy_points <= 0)
         std::cout << "Not enough energy points\n";
-    else if (hit_points <= 0)
-        std::cout << "ScavTrap: " << name << " is dead and cannot attack!\n";
-    else
+    else if (this->hit_points <= 0)
+        std::cout << "ScavTrap: " << this->name << " is dead and cannot attack!\n";
     {
-        energy_points--;
-        std::cout << "ScavTrap: " << name << " attacks " << target << ", causing " << attack_dammage << " points of demage!" << std::endl;
+        this->energy_points--;
+        std::cout << "ScavTrap: " << this->name << " attacks " << target << ", causing " << this->attack_dammage << " points of demage!" << std::endl;
     }
 }
 
+std::ostream& operator<<(std::ostream& os, const ScavTrap& claptrap);
+
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavRep is now in guard mode\n";
+    if (this->hit_points <= 0)
+    {
+        std::cout << "Cannot switch to guradmode because: ClapTrap " << this->name << " is dead" <<std::endl;
+    }
+    else 
+        std::cout << "ScavRep from ClapTrap " << this->name << " is now in guard mode\n";
 }
-
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap Destructor called" << std::endl;
 }

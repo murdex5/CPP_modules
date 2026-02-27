@@ -5,10 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/02 12:14:03 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/25 13:50:51 by kadferna         ###   ########.fr       */
+/*   Created: 2026/01/30 13:27:36 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/25 13:45:13 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+
+# define CLAPTRAP_HPP
+
 
 # include <iostream>
 # include <cstdlib>
@@ -21,7 +26,8 @@ class ClapTrap {
        int attack_dammage;
     
     public:
-        ClapTrap(std::string _name);
+        ClapTrap( void );
+        ClapTrap(std::string const &_name);
         ClapTrap(const ClapTrap& other);
         ClapTrap& operator=(const ClapTrap &other);
         ~ClapTrap();
@@ -29,7 +35,7 @@ class ClapTrap {
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-    
+
     // Getter & Setters
         std::string const &get_name( void ) const;
         int const  &get_hp(void) const;
@@ -43,3 +49,5 @@ class ClapTrap {
 };
 
 std::ostream& operator<<(std::ostream& os, const ClapTrap& claptrap);
+
+# endif

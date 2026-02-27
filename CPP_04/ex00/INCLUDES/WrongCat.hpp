@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/14 13:45:11 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 12:57:23 by kadferna         ###   ########.fr       */
+/*   Created: 2026/02/27 12:30:47 by kadferna          #+#    #+#             */
+/*   Updated: 2026/02/27 12:58:46 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef DOG_HPP
-# define DOG_HPP
+# ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include "INCLUDES/Animal.hpp"
 
-class Dog : public Animal
+class WrongCat : public Animal
 {
-    public: 
-        Dog();
-        Dog(Dog const &other);
+    public :
+        WrongCat();
+        WrongCat(Cat const &other);
 
-        // Assignment operator
-        Dog &operator=(Dog const &other);
+        // Assignment Operator
+        WrongCat &operator=(WrongCat const &other);
 
-        // Deconstrctor
-        ~Dog();
+        // Deconstructor
+        ~WrongCat();
 
-        // Public meethods
+        // Public methods
         void makeSound( void ) const;
+    
 }
 
-# endif
+# WRONG_CAT_HPP

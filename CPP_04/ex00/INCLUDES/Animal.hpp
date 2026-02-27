@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:47:45 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/16 12:44:23 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/27 12:33:08 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef ANIMAL_HPP
+
+# define ANIMAL_HPP
 
 # include <iostream>
 # include <cstdlib>
@@ -22,10 +26,14 @@ class Animal {
         Animal();
         Animal( const Animal &other );
         Animal& operator=(const Animal &other);
-        ~Animal();
+        virtual ~Animal();
         
         virtual void makeSound() const;
+
+        // Getters & Setters
         std::string getType() const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Animal& animal);
+
+#endif

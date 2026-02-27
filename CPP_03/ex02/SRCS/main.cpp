@@ -22,3 +22,29 @@ int main( void )
     a.highFiveGuys();
     return 0;
 }
+
+// Tests
+/*
+int main(void)
+{
+    std::cout << "Testing Constructor Chaining" << std::endl;
+    FragTrap frag("Frankie");
+
+    std::cout << "esting Combat Attributes" << std::endl;
+    // FragTrap doesn't override attack, so it uses ClapTrap::attack
+    // But it uses FragTrap's 30 Attack Damage!
+    frag.attack("Bandit");
+    
+    frag.takeDamage(50);
+    frag.beRepaired(25);
+
+    std::cout << "Testing Special Ability" << std::endl;
+    frag.highFiveGuys();
+
+    std::cout << "Testing Extreme Damage" << std::endl;
+    frag.takeDamage(200); // 100 HP goes to 0
+    frag.attack("Another Bandit"); // Should fail because hit points are 0
+
+    return 0;
+}
+    */

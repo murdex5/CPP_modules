@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:02 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 12:58:14 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/27 12:59:31 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ class WrongAnimal : public Animal
 
         // Public meethods
         void makeSound( void ) const;
-}
+};
 
 # endif

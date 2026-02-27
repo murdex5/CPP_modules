@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kadferna <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/14 13:42:48 by kadferna          #+#    #+#              #
-#    Updated: 2026/02/16 12:47:40 by kadferna         ###   ########.fr        #
+#    Updated: 2026/02/27 13:21:59 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,16 @@ SRCS_DIR = ./SRCS
 INCLUDES = ${INCLUDE_DIR}/Animal.hpp \
 			${INCLUDE_DIR}/Dog.hpp \
 			${INCLUDE_DIR}/Cat.hpp \
+			${INCLUDE_DIR}/WrongAnimal.hpp \
+			${INCLUDE_DIR}/WrongCat.hpp \
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =  ${SRCS_DIR}/Animal.cpp \
 		${SRCS_DIR}/Dog.cpp \
 		${SRCS_DIR}/Cat.cpp \
+		${INCLUDE_DIR}/WrongAnimal.cpp \
+		${INCLUDE_DIR}/WrongCat.cpp \
 		${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

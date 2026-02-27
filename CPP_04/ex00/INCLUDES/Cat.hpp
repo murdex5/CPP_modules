@@ -31,5 +31,6 @@ class Cat : public Animal
         // Public methods
         void makeSound( void ) const;
     
-}
+};
+
 # endif

@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:30:47 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 12:58:46 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:06:44 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat : public Animal
 {
     public :
         WrongCat();
-        WrongCat(Cat const &other);
+        WrongCat(WrongCat const &other);
 
         // Assignment Operator
         WrongCat &operator=(WrongCat const &other);
@@ -30,6 +30,6 @@ class WrongCat : public Animal
         // Public methods
         void makeSound( void ) const;
     
-}
+};
 
-# WRONG_CAT_HPP
+# endif

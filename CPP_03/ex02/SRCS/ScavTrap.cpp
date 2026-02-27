@@ -24,6 +24,8 @@ ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 void ScavTrap::attack(const std::string& target ) {
     if (energy_points <= 0)
         std::cout << "Not enough energy points\n";
+    else if (hit_points <= 0)
+        std::cout << "ScavTrap: " << name << " is dead and cannot attack!\n";
     else
     {
         energy_points--;

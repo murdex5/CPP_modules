@@ -6,11 +6,11 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:20 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 13:21:05 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 09:59:27 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "INCLUDES/WrongCat.hpp"
+#include "../INCLUDES/WrongCat.hpp"
 
 WrongCat::WrongCat() : Animal() {
     this->type = "WrongCat";

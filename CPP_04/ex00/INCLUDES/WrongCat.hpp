@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:30:47 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 13:06:44 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 09:57:48 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "INCLUDES/Animal.hpp"
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
     public :
         WrongCat();

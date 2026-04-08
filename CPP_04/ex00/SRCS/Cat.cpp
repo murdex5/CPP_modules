@@ -6,11 +6,11 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:45:41 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/27 13:14:19 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 09:59:19 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "INCLUDES/Cat.hpp"
+#include "../INCLUDES/Cat.hpp"
 
 Cat::Cat() : Animal() {
     this->type = "Cat";

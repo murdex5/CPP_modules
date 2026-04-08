@@ -6,11 +6,11 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/14 13:42:48 by kadferna          #+#    #+#              #
-#    Updated: 2026/04/08 10:01:46 by kadferna         ###   ########.fr        #
+#    Updated: 2026/04/08 12:06:35 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = IDWSTWOF
 
 CC = g++
 
@@ -23,6 +23,7 @@ INCLUDES = ${INCLUDE_DIR}/Animal.hpp \
 			${INCLUDE_DIR}/Cat.hpp \
 			${INCLUDE_DIR}/WrongAnimal.hpp \
 			${INCLUDE_DIR}/WrongCat.hpp \
+			${INCLUDE_DIR}/Brain.hpp 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -31,6 +32,7 @@ SRCS =  ${SRCS_DIR}/Animal.cpp \
 		${SRCS_DIR}/Cat.cpp \
 		${SRCS_DIR}/WrongAnimal.cpp \
 		${SRCS_DIR}/WrongCat.cpp \
+		${SRCS_DIR}/Brain.cpp \
 		${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

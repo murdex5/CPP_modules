@@ -6,29 +6,33 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:02 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 10:00:25 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 10:14:06 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
-# include "./Animal.hpp"
+# include <iostream>
+# include <cstdlib>
 
-class WrongAnimal : public Animal
-{
-    public: 
+class WrongAnimal {
+
+    protected:
+        std::string type;
+    
+    public:
         WrongAnimal();
-        WrongAnimal(WrongAnimal const &other);
+        WrongAnimal( const WrongAnimal &other );
+        WrongAnimal& operator=(const WrongAnimal &other);
+        virtual ~WrongAnimal();
+        
+        virtual void makeSound() const;
 
-        // Assignment operator
-        WrongAnimal &operator=(WrongAnimal const &other);
-
-        // Deconstrctor
-        ~WrongAnimal();
-
-        // Public meethods
-        void makeSound( void ) const;
+        // Getters & Setters
+        std::string getType() const;
 };
 
-# endif
+std::ostream& operator<<(std::ostream& os, WrongAnimal& animal);
+
+#endif

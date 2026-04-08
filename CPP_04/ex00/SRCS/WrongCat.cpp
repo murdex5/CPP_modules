@@ -6,26 +6,26 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:20 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 09:59:27 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 10:06:04 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/WrongCat.hpp"
 
-WrongCat::WrongCat() : Animal() {
+WrongCat::WrongCat() : WrongAnimal() {
     this->type = "WrongCat";
     std::cout << "WrongCat default constructor called\n";
 }
 
-WrongCat::WrongCat(Cat const &other) : Animal(other) {
+WrongCat::WrongCat(WrongCat const &other) : WrongAnimal(other) {
     std::cout << "WrongCat copy oparator called\n";
 }
 
-WrongCat &WrongCat::operator=(Cat const &other)
+WrongCat &WrongCat::operator=(WrongCat const &other)
 {
     std::cout << "WrongCat assignment operator called\n";
     if (this != &other)
-        Animal::operator=(other);
+        WrongAnimal::operator=(other);
     return *this;
 }
 

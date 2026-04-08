@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:45:18 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 10:00:55 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 12:10:28 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 # define CAT_HPP
 
 # include "./Animal.hpp"
+# include "./Brain.hpp"
 
 
 class Cat : public Animal
 {
+    privet:
+        Brain *b1;
+    
     public :
         Cat();
         Cat(Cat const &other);

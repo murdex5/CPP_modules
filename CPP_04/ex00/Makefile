@@ -6,7 +6,7 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/14 13:42:48 by kadferna          #+#    #+#              #
-#    Updated: 2026/02/27 13:21:59 by kadferna         ###   ########.fr        #
+#    Updated: 2026/04/08 10:01:46 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =  ${SRCS_DIR}/Animal.cpp \
 		${SRCS_DIR}/Dog.cpp \
 		${SRCS_DIR}/Cat.cpp \
-		${INCLUDE_DIR}/WrongAnimal.cpp \
-		${INCLUDE_DIR}/WrongCat.cpp \
+		${SRCS_DIR}/WrongAnimal.cpp \
+		${SRCS_DIR}/WrongCat.cpp \
 		${SRCS_DIR}/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

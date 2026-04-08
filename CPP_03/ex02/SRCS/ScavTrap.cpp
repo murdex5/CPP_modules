@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadferna <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 12:15:58 by kadferna          #+#    #+#             */
-/*   Updated: 2026/02/02 12:16:00 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/08 09:47:29 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void ScavTrap::attack(const std::string& target ) {
         std::cout << "Not enough energy points\n";
     else if (this->hit_points <= 0)
         std::cout << "ScavTrap: " << this->name << " is dead and cannot attack!\n";
+    else
     {
         this->energy_points--;
         std::cout << "ScavTrap: " << this->name << " attacks " << target << ", causing " << this->attack_dammage << " points of demage!" << std::endl;

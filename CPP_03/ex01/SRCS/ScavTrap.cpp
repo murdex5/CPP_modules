@@ -42,6 +42,7 @@ void ScavTrap::attack(const std::string& target ) {
         std::cout << "Not enough energy points\n";
     else if (this->hit_points <= 0)
         std::cout << "ScavTrap: " << this->name << " is dead and cannot attack!\n";
+	else
     {
         this->energy_points--;
         std::cout << "ScavTrap: " << this->name << " attacks " << target << ", causing " << this->attack_dammage << " points of demage!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 11:41:22 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 12:05:57 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/17 23:26:49 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Brain::Brain( void ) {
     std::cout << "Brain was created with the default constructor!" << std::endl;
 }
 
-Brain::Brain(const Brain &other)
+Brain::Brain(const Brain &copy)
 {
     *this = copy;
     std::cout << "Brain copy constructor called." << std::endl; 

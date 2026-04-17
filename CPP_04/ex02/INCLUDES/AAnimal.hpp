@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:47:45 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/17 23:47:05 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/17 23:49:49 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AAnimal {
         AAnimal();
         AAnimal( const AAnimal &other );
         AAnimal& operator=(const AAnimal &other);
-        virtual ~AAnimal();
+        virtual ~AAnimal() = 0;
         
         virtual void makeSound() const;
 

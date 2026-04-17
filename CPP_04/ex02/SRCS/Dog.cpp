@@ -6,18 +6,18 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:45:30 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 09:59:21 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/17 23:48:41 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : AAnimal() {
     this->type = "Dog";
     std::cout << "Dog default constructor called\n";
 }
 
-Dog::Dog(Dog const &other) : Animal(other) {
+Dog::Dog(Dog const &other) : AAnimal(other) {
     std::cout << "Dog copy oparator called\n";
 }
 
@@ -25,7 +25,7 @@ Dog &Dog::operator=(Dog const &other)
 {
     std::cout << "Dog assignment operator called\n";
     if (this != &other)
-        Animal::operator=(other);
+        AAnimal::operator=(other);
     return *this;
 }
 

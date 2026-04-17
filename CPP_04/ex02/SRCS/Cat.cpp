@@ -6,18 +6,18 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/14 13:45:41 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/08 09:59:19 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/17 23:48:15 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDES/Cat.hpp"
 
-Cat::Cat() : Animal() {
+Cat::Cat() : AAnimal() {
     this->type = "Cat";
     std::cout << "Cat default constructor called\n";
 }
 
-Cat::Cat(Cat const &other) : Animal(other) {
+Cat::Cat(Cat const &other) : AAnimal(other) {
     std::cout << "Cat copy oparator called\n";
 }
 
@@ -25,7 +25,7 @@ Cat &Cat::operator=(Cat const &other)
 {
     std::cout << "Cat assignment operator called\n";
     if (this != &other)
-        Animal::operator=(other);
+        AAnimal::operator=(other);
     return *this;
 }
 

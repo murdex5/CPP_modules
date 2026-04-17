@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 11:41:22 by kadferna          #+#    #+#             */
-/*   Updated: 2026/04/17 23:26:49 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/04/17 23:29:30 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ Brain::~Brain()
     std::cout << "Brain destructor called." << std::endl;
 }
 
-Brain const &Brain::operator=(Brain const &copy)
+Brain& Brain::operator=(Brain const &copy)
 {
     std::copy(copy._ideas, copy._ideas + 100, this->_ideas);
     std::cout << "Assignment operator for Brain called." << std::endl;
     return (*this);
 }
-
 
 std::string const &Brain::getIdea(int const &index) const
 {

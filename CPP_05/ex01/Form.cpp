@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp";
+#include "Form.hpp"
 
 // Constructors
 
@@ -38,4 +38,66 @@ Form::Form(Form const &other) : _name(other._name), _isSigned(other._isSigned), 
 
     std::cout << "Form: Copy constructor called\n";
     *this = other;
+}
+
+Form &Form::operator=(const Form &other)
+{
+    std::cout << "Form: Copy assignment operator called\n";
+    this->_isSigned = other._isSigned;
+    return (*this);
+}
+
+Form::~Form()
+{
+    std::cout << "Form: Destructor called\n";
+}
+
+// Member Function
+
+std::string const &Form::getName(void) const
+{
+    return (this->_name);
+};
+
+int const &Form::getSignGrade(void) const
+{
+    return (this->_signGrade);
+};
+
+int const &Form::getExecGrade(void) const
+{
+    return (this->_executeGrade);
+};
+
+bool const &Form::getIsSigned(void) const
+{
+    return (this->_isSigned);
+};
+
+void Form::beSigned(Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.getGrade() > this->_signGrade)
+        throw(Form::GradeTooLowException());
+    else
+    {
+        this->_isSigned = 1;
+        std::cout << bureaucrat.getName() << " successfully signed " << this->_name << std::endl;
+    }
+}
+
+// Exceptions
+
+char const *Form::GradeTooHighException::what(void) const throw()
+{
+    return ("Grade is too high");
+}
+
+char const *Form::GradeTooLowException::what(void) const throw()
+{
+    return ("Grade is too low");
+}
+
+std::ostream &operator<<(std::ostream &os, Form const &form)
+{
+    return (os << form.getName() << " form, signed: " << form.getIsSigned() << ", sign grade: " << form.getSignGrade() << ", exec grade: " << form.getExecGrade());
 }

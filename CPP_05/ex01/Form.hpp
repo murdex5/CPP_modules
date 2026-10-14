@@ -24,26 +24,29 @@ class Form
 {
 private:
     const std::string _name;
-    bool _is_signed;
-    const int _sign_grade;
-    const int _execute_grade;
+    bool _isSigned;
+    const int _signGrade;
+    const int _executeGrade;
 
 public:
     // Constructors
     Form();
-    Form(const std::string name, const int is_signed, const int execute_grade);
+    Form(std::string const &name, int const &signGrade, int const &execGrade);
     Form(const Form &other);
     Form &operator=(const Form &other);
     ~Form();
 
     // Member Functions
 
-    void getSigned(const Bureaucrat &bureaucrat);
-    std::string getName() const;
-    bool getIsSigned() const;
-    int getSignGerade() const;
-    int getExecuteGrade() const;
+    std::string const &getName(void) const;
+    bool const &getIsSigned(void) const;
+    int const &getSignGrade(void) const;
+    int const &getExecGrade(void) const;
 
+    // Bureaucrat Member functions
+    void beSigned(Bureaucrat &bureaucrat);
+
+    // Execptions
     class GradeTooHighException : public std::exception
     {
     public:

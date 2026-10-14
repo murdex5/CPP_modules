@@ -17,10 +17,12 @@
 #include <string>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 private:
-    std::string _name;
+    const std::string _name;
     int _grade;
 
 public:
@@ -36,6 +38,9 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+
+    // Functsion for Form
+    void signForm(Form &form);
 
     // Exceptions
     class GradeTooHighException : public std::exception

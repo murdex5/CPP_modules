@@ -19,7 +19,7 @@ Form::Form() : _name("default"), _isSigned(false), _signGrade(30), _executeGrade
     std::cout << "Form: default constructor called.\n";
 };
 
-Form::Form(std::string const &name, int const &singGrade, int const &execGrade) : _name(name), _isSigned(0), _signGrade(singGrade), _executeGrade(execGrade)
+Form::Form(std::string const &name, int const &singGrade, int const &execGrade) : _name(name), _isSigned(false), _signGrade(singGrade), _executeGrade(execGrade)
 {
     std::cout << "Fomr: constructor called\n";
 
@@ -37,7 +37,6 @@ Form::Form(Form const &other) : _name(other._name), _isSigned(other._isSigned), 
 {
 
     std::cout << "Form: Copy constructor called\n";
-    *this = other;
 }
 
 Form &Form::operator=(const Form &other)
@@ -79,10 +78,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
     if (bureaucrat.getGrade() > this->_signGrade)
         throw(Form::GradeTooLowException());
     else
-    {
-        this->_isSigned = 1;
-        std::cout << bureaucrat.getName() << " successfully signed " << this->_name << std::endl;
-    }
+        this->_isSigned = true;
 }
 
 // Exceptions

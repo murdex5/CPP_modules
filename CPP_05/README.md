@@ -11,7 +11,7 @@ Useful links:
 
 ## What is Exception Handling
 
-Exception handling in C++ is a mechanism used to manage runtime errors (such as division by zero, out-of-bounds array access, or missing files) so that a program can handle problems gracefully instead of crashing abruptly.
+**Exception handling** in C++ is a mechanism used to manage runtime errors (such as division by zero, out-of-bounds array access, or missing files) so that a program can handle problems gracefully instead of crashing abruptly.
 
 It's like when a Karen comes in and tries to have an argument with you, but you want to keep your peace, so you forward them to the manager.
 

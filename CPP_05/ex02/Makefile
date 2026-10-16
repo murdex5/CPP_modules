@@ -6,21 +6,30 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/14 16:38:17 by kadferna          #+#    #+#              #
-#    Updated: 2026/10/14 16:54:07 by kadferna         ###   ########.fr        #
+#    Updated: 2026/10/16 12:05:20 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Forms
+
+NAME = NYNF2N2
 
 CC = g++
 
 INCLUDES = ./Bureaucrat.hpp \
+			./AForm.hpp \
+			./PresidentialPardonForm.hpp \
+			./RobotomyRequestForm.hpp \
+			./ShrubberyCreationForm.hpp \
 			./Form.hpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = ./Bureaucrat.cpp \
-		./Form.cpp \
+		./AForm.cpp \
+		./PresidentialPardonForm.cpp \
+		./RobotomyRequestForm.cpp \
+		./ShrubberyCreationForm.cpp \
+		./Form.cpp
 		./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

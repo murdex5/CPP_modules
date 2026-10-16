@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 

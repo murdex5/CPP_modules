@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:27 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 02:47:48 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:23:48 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,29 @@
 
 // Constructors
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm::AForm("RobotomyRequestForm", 72, 45), _target("default") {};
+RobotomyRequestForm::RobotomyRequestForm() : AForm::AForm("RobotomyRequestForm", 72, 45), _target("null")
+{
+    std::cout << "RobotomyRequestForm: Default constructor called\n";
+};
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm::AForm("RobotomyRequestForm", 72, 45), _target(target) {};
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm::AForm("RobotomyRequestForm", 72, 45), _target(target)
+{
+    std::cout << "RobotomyRequestForm: Constructor called\n";
+};
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) : AForm::AForm(other), _target(other._target) {};
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) : AForm::AForm(other), _target(other._target)
+{
+    std::cout << "RobotomyRequestForm: Copy constructor called\n";
+};
 
-RobotomyRequestForm::~RobotomyRequestForm() {};
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+    std::cout << "RobotomyRequestForm: Destructor called\n";
+};
 
 RobotomyRequestForm const &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
+    std::cout << "RobotomyRequestForm: Copy operator constructor called\n";
     AForm::operator=(other);
     this->_target = other._target;
     return (*this);

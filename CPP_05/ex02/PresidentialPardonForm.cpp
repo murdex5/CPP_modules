@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:48 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 02:27:36 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:22:39 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,29 @@
 
 // Constructors
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm::AForm("PresidentialPardonForm", 25, 5), _target("null") {}
+PresidentialPardonForm::PresidentialPardonForm() : AForm::AForm("PresidentialPardonForm", 25, 5), _target("null")
+{
+    std::cout << "PresidentialPardonForm: Default constructor called\n";
+}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : AForm::AForm("PresidentialPardonForm", 25, 5), _target(target) {};
+PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : AForm::AForm("PresidentialPardonForm", 25, 5), _target(target)
+{
+    std::cout << "PresidentialPardonForm: Constructor called\n";
+};
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other) : AForm::AForm(other), _target(other._target) {};
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other) : AForm::AForm(other), _target(other._target)
+{
+    std::cout << "PresidentialPardonForm: Copy constructor called\n";
+};
 
-PresidentialPardonForm::~PresidentialPardonForm() {};
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    std::cout << "PresidentialPardonForm: Destructor called\n";
+};
 
 PresidentialPardonForm const &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
+    std::cout << "PresidentialPardonForm: Copy operator constructor called\n";
     AForm::operator=(other);
     this->_target = other._target;
     return (*this);

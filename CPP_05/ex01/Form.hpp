@@ -32,11 +32,11 @@ private:
 
 public:
     // Constructors
-    Form();
+    Form(void);
     Form(std::string const &name, int const &signGrade, int const &execGrade);
     Form(const Form &other);
     Form &operator=(const Form &other);
-    ~Form();
+    ~Form(void);
 
     // Member Functions
 
@@ -52,13 +52,13 @@ public:
     class GradeTooHighException : public std::exception
     {
     public:
-        virtual const char *what() const throw();
+        virtual const char *what(void) const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
     public:
-        virtual const char *what() const throw();
+        virtual const char *what(void) const throw();
     };
 };
 

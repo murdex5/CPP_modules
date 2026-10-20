@@ -14,7 +14,7 @@
 
 // Constructors
 
-Form::Form() : _name("default"), _isSigned(false), _signGrade(30), _executeGrade(60)
+Form::Form(void) : _name("default"), _isSigned(false), _signGrade(30), _executeGrade(60)
 {
     std::cout << "Form: default constructor called.\n";
 };
@@ -46,7 +46,7 @@ Form &Form::operator=(const Form &other)
     return (*this);
 }
 
-Form::~Form()
+Form::~Form(void)
 {
     std::cout << "Form: Destructor called\n";
 }

@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:42 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 14:03:59 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 13:43:00 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ private:
 
 public:
     /* Constructors and Destructors */
-    PresidentialPardonForm();
+    PresidentialPardonForm(void);
     PresidentialPardonForm(std::string const &target);
     PresidentialPardonForm(PresidentialPardonForm const &other);
-    ~PresidentialPardonForm();
+    ~PresidentialPardonForm(void);
 
     /* Operators */
     PresidentialPardonForm const &operator=(PresidentialPardonForm const &other);

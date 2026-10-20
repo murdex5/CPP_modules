@@ -30,32 +30,33 @@ private:
 
 public:
     // Constructors
-    Bureaucrat();
+    Bureaucrat(void);
     Bureaucrat(const std::string name, int grade);
     Bureaucrat(const Bureaucrat &other);
     Bureaucrat &operator=(const Bureaucrat &other);
-    ~Bureaucrat();
+    ~Bureaucrat(void);
 
     // Member Functions
-    std::string getName() const;
-    int getGrade() const;
-    void incrementGrade();
-    void decrementGrade();
+    std::string getName(void) const;
+    int getGrade(void) const;
+    void incrementGrade(void);
+    void decrementGrade(void);
 
     // Functsion for Form
     void signForm(AForm &form);
+    void executeForm(AForm const &form) const;
 
     // Exceptions
     class GradeTooHighException : public std::exception
     {
     public:
-        virtual const char *what() const throw();
+        virtual const char *what(void) const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
     public:
-        virtual const char *what() const throw();
+        virtual const char *what(void) const throw();
     };
 };
 

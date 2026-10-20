@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:05 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 14:11:51 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:04:58 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void ShrubberyCreationForm::beExecuted(const Bureaucrat &bureaucrat) const
 {
     std::ofstream outfile;
 
-    outfile.open((this->_target + "_shurbbery").c_str());
+    outfile.open((this->_target + "_shrubbery").c_str());
     if (outfile.fail())
     {
         std::cout << "Could not open output file\n";

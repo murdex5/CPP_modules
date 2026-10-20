@@ -6,7 +6,7 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/14 16:38:17 by kadferna          #+#    #+#              #
-#    Updated: 2026/10/17 14:04:27 by kadferna         ###   ########.fr        #
+#    Updated: 2026/10/20 12:32:15 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf ./Home_shrubbery
 	
 re: fclean all

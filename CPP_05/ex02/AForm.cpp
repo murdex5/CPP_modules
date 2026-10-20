@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:53:34 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/16 12:25:56 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 13:50:45 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Constructors
 
-AForm::AForm() : _name("default"), _isSigned(false), _signGrade(30), _executeGrade(60)
+AForm::AForm(void) : _name("default"), _isSigned(false), _signGrade(30), _executeGrade(60)
 {
     std::cout << "AForm: default constructor called.\n";
 };
@@ -46,7 +46,7 @@ AForm &AForm::operator=(const AForm &other)
     return (*this);
 }
 
-AForm::~AForm()
+AForm::~AForm(void)
 {
     std::cout << "AForm: Destructor called\n";
 }
@@ -81,6 +81,15 @@ void AForm::beSigned(Bureaucrat &bureaucrat)
         this->_isSigned = true;
 }
 
+void AForm::execute(Bureaucrat const &executer) const
+{
+    if (!this->_isSigned)
+        throw FormNotSignedException();
+    if (executer.getGrade() > this->_executeGrade)
+        throw GradeTooLowException();
+    this->beExecuted(executer);
+}
+
 // Exceptions
 
 char const *AForm::GradeTooHighException::what(void) const throw()
@@ -91,6 +100,11 @@ char const *AForm::GradeTooHighException::what(void) const throw()
 char const *AForm::GradeTooLowException::what(void) const throw()
 {
     return ("Grade is too low");
+}
+
+char const *AForm::FormNotSignedException::what(void) const throw()
+{
+    return ("Form is not signed");
 }
 
 std::ostream &operator<<(std::ostream &os, AForm const &form)

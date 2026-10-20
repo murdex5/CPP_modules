@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:21 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 14:04:16 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:07:17 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 class Bureaucrat;
@@ -27,10 +28,10 @@ private:
 
 public:
     /* Constructors and Destructors */
-    RobotomyRequestForm();
+    RobotomyRequestForm(void);
     RobotomyRequestForm(std::string const &target);
     RobotomyRequestForm(RobotomyRequestForm const &other);
-    ~RobotomyRequestForm();
+    ~RobotomyRequestForm(void);
 
     /* Operators */
     RobotomyRequestForm const &operator=(RobotomyRequestForm const &other);

@@ -6,14 +6,14 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:55:30 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 14:03:52 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:15:19 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef SHURBBERYCREATIONFORM_HPP
-#define SHURBBERYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #include <fstream>
 #include "AForm.hpp"
@@ -27,11 +27,12 @@ class ShrubberyCreationForm : public AForm
 private:
     std::string _target;
 
+public:
     /* Constructors and Destructors */
-    ShrubberyCreationForm();
+    ShrubberyCreationForm(void);
     ShrubberyCreationForm(std::string const &target);
     ShrubberyCreationForm(ShrubberyCreationForm const &other);
-    ~ShrubberyCreationForm();
+    ~ShrubberyCreationForm(void);
 
     /* Operators */
     ShrubberyCreationForm const &operator=(ShrubberyCreationForm const &other);

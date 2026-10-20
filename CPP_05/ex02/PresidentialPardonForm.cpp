@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:48 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/17 13:22:39 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/19 14:02:30 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ PresidentialPardonForm const &PresidentialPardonForm::operator=(const Presidenti
 void PresidentialPardonForm::beExecuted(const Bureaucrat &bureaucrat) const
 {
     (void)bureaucrat;
-    std::cout << this->_target << " has been pardoned by Zaphod Beeblebro\n";
+    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox\n";
 }
 
 std::ostream &operator<<(std::ostream &str, PresidentialPardonForm const &form)

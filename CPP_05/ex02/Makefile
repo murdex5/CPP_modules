@@ -6,7 +6,7 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/14 16:38:17 by kadferna          #+#    #+#              #
-#    Updated: 2026/10/20 12:32:15 by kadferna         ###   ########.fr        #
+#    Updated: 2026/10/28 12:38:01 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,13 @@ NAME = NYNF2N2
 CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+INCLUDES = ./Bureaucrat.hpp \
+			./AForm.hpp \
+			./PresidentialPardonForm.hpp \
+			./RobotomyRequestForm.hpp \
+			./ShrubberyCreationForm.hpp \
+
 
 SRCS = ./Bureaucrat.cpp \
 		./AForm.cpp \
@@ -32,7 +39,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)

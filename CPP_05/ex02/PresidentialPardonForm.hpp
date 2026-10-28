@@ -6,11 +6,9 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:42 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/19 13:43:00 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:23:30 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP

@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:27 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/19 15:05:02 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 10:45:47 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,32 @@
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm::AForm("RobotomyRequestForm", 72, 45), _target("null")
 {
-    std::cout << "RobotomyRequestForm: Default constructor called\n";
+    std::cout << "RobotomyRequestForm: Default constructor called" << std::endl;
+    ;
 };
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : AForm::AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-    std::cout << "RobotomyRequestForm: Constructor called\n";
+    std::cout << "RobotomyRequestForm: Constructor called" << std::endl;
+    ;
 };
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) : AForm::AForm(other), _target(other._target)
 {
-    std::cout << "RobotomyRequestForm: Copy constructor called\n";
+    std::cout << "RobotomyRequestForm: Copy constructor called" << std::endl;
+    ;
 };
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-    std::cout << "RobotomyRequestForm: Destructor called\n";
+    std::cout << "RobotomyRequestForm: Destructor called" << std::endl;
+    ;
 };
 
 RobotomyRequestForm const &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
 {
-    std::cout << "RobotomyRequestForm: Copy operator constructor called\n";
+    std::cout << "RobotomyRequestForm: Copy operator constructor called" << std::endl;
+    ;
     AForm::operator=(other);
     this->_target = other._target;
     return (*this);
@@ -58,11 +63,11 @@ void RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const
     }
     success = rand() % 2;
     (void)bureaucrat;
-    std::cout << "* BZZZZZ... DRRRRRR... *\n";
+    std::cout << "* BZZZZZ... DRRRRRR... *" << std::endl;
     if (success)
-        std::cout << this->_target << " has been robotomized successfully 50% of the time.\n";
+        std::cout << this->_target << " has been robotomized successfully 50% of the time." << std::endl;
     else
-        std::cout << this->_target << "'s robotomization failed\n";
+        std::cout << this->_target << "'s robotomization failed" << std::endl;
 };
 
 std::ostream &operator<<(std::ostream &str, RobotomyRequestForm const &form)

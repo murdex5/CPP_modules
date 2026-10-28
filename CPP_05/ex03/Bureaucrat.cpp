@@ -15,13 +15,13 @@
 
 Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
 {
-    // std::cout << "Default constructor called\n";
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 
-    std::cout << "Constructor called\n";
+    std::cout << "Constructor called" << std::endl;
 
     if (grade < 1)
         throw GradeTooHighException();

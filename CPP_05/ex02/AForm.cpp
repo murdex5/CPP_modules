@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:53:34 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/19 13:50:45 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 10:48:18 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 AForm::AForm(void) : _name("default"), _isSigned(false), _signGrade(30), _executeGrade(60)
 {
-    std::cout << "AForm: default constructor called.\n";
+    std::cout << "AForm: default constructor called." << std::endl;
 };
 
 AForm::AForm(std::string const &name, int const &singGrade, int const &execGrade) : _name(name), _isSigned(false), _signGrade(singGrade), _executeGrade(execGrade)
 {
-    std::cout << "AForm: constructor called\n";
+    std::cout << "AForm: constructor called" << std::endl;
 
     if (this->_signGrade < 1)
         throw(AForm::GradeTooHighException());
@@ -36,19 +36,19 @@ AForm::AForm(std::string const &name, int const &singGrade, int const &execGrade
 AForm::AForm(AForm const &other) : _name(other._name), _isSigned(other._isSigned), _signGrade(other._signGrade), _executeGrade(other._executeGrade)
 {
 
-    std::cout << "AForm: Copy constructor called\n";
+    std::cout << "AForm: Copy constructor called" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other)
 {
-    std::cout << "AForm: Copy assignment operator called\n";
+    std::cout << "AForm: Copy assignment operator called" << std::endl;
     this->_isSigned = other._isSigned;
     return (*this);
 }
 
 AForm::~AForm(void)
 {
-    std::cout << "AForm: Destructor called\n";
+    std::cout << "AForm: Destructor called" << std::endl;
 }
 
 // Member Function

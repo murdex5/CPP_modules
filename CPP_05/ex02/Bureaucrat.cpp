@@ -15,13 +15,13 @@
 
 Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150)
 {
-    // std::cout << "Default constructor called\n";
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 
-    std::cout << "Constructor called\n";
+    std::cout << "Constructor called" << std::endl;
 
     if (grade < 1)
         throw GradeTooHighException();
@@ -87,11 +87,11 @@ void Bureaucrat::executeForm(AForm const &form) const
     try
     {
         form.execute(*this);
-        std::cout << this->_name << " executed " << form.getName() << "\n";
+        std::cout << this->_name << " executed " << form.getName() << "" << std::endl;
     }
     catch (const std::exception &e)
     {
-        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << ".\n";
+        std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << "." << std::endl;
     }
 }
 

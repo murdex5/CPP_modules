@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:59 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/28 11:54:54 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:04:54 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,22 @@ int main()
     std::cout << "\n==== Valid names\n";
     {
         AForm *a = someIntern.makeForm("ShrubberyCreationForm", "garden");
+        std::cout << "\n";
         AForm *b = someIntern.makeForm("RobotomyRequestForm", "Bender");
+        std::cout << "\n";
         AForm *c = someIntern.makeForm("PresidentialPardonForm", "Zaphod");
+        std::cout << "\n";
 
         if (a)
-            std::cout << *a << std::endl;
+            std::cout << "\n"
+                      << *a << std::endl;
         if (b)
-            std::cout << *b << std::endl;
+            std::cout << "\n"
+                      << *b << std::endl;
         if (c)
-            std::cout << *c << std::endl;
+            std::cout << "\n"
+                      << *c << std::endl
+                      << "\n";
 
         delete a;
         delete b;

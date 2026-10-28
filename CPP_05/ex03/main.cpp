@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:59 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/28 12:04:54 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:11:32 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 
     // Test 1 all three valid names;
 
-    std::cout << "\n==== Valid names\n";
+    std::cout << "\n==== Valid names====\n";
     {
         AForm *a = someIntern.makeForm("ShrubberyCreationForm", "garden");
         std::cout << "\n";
@@ -46,6 +46,26 @@ int main()
         delete c;
     }
 
+    // Test 2: Unknown name
+
+    std::cout << "\n==== Unknown names====\n";
+    {
+        AForm *bad = someIntern.makeForm("Vishal balla", "baw baw");
+        std::cout << "returned: " << (bad ? "non-null" : "NULL") << std::endl;
+        delete bad; // safe if NULL
+    }
+
+    // Test 3: Case sensivity
+    std::cout << "\n==== Case sensivity ====\n";
+    {
+        AForm *f = someIntern.makeForm("RobotomyrequestForm", "brrr");
+        if (f)
+        {
+            f->beSigned(boss);
+            boss.executeForm(*f);
+            delete f;
+        }
+    }
     std::cout << "\n-------------------------------------\n\n";
     std::cout << "End of test\n\n";
     std::cout << "-------------------------------------\n\n";

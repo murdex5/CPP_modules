@@ -6,9 +6,11 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:39:30 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/28 11:12:35 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 11:55:21 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef INTERN_HPP
 #define INTERN_HPP
@@ -19,10 +21,10 @@
 class Intern
 {
 public:
-    Intern(void);
+    Intern();
     Intern(const Intern &other);
     Intern &operator=(const Intern &other);
-    ~Intern(void);
+    ~Intern();
 
     AForm *makeForm(const std::string form_name, const std::string target);
 };

@@ -6,11 +6,9 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:53:28 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/19 14:11:00 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:23:43 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #ifndef AFORM_HPP
 #define AFORM_HPP

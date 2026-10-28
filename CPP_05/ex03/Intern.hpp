@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 12:39:30 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/28 10:13:30 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 10:27:15 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ public:
     ~Intern();
 
     AForm *makeForm(const std::string &formName, const std::string &target) const;
-
-private:
-    typedef AForm *(Intern::*FormCreator)(const std::string &) const;
 };
 
 std::ostream &operator<<(std::ostream &os, Intern const &other);

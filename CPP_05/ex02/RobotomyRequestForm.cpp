@@ -6,7 +6,7 @@
 /*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 11:56:27 by kadferna          #+#    #+#             */
-/*   Updated: 2026/10/28 10:45:47 by kadferna         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:46:16 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const
 
     if (!seeded)
     {
-        srand(static_cast<unsigned int>(time(NULL)));
+        std::srand(static_cast<unsigned int>(std::time(NULL)));
         seeded = true;
     }
     success = rand() % 2;

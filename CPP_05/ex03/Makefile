@@ -6,7 +6,7 @@
 #    By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/14 16:38:17 by kadferna          #+#    #+#              #
-#    Updated: 2026/10/20 12:32:15 by kadferna         ###   ########.fr        #
+#    Updated: 2026/10/20 12:39:55 by kadferna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = ./Bureaucrat.cpp \
 		./PresidentialPardonForm.cpp \
 		./RobotomyRequestForm.cpp \
 		./ShrubberyCreationForm.cpp \
+		./Intern.cpp \
 		./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

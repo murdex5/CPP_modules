@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kadferna <kadferna@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/20 12:39:30 by kadferna          #+#    #+#             */
+/*   Updated: 2026/10/20 13:08:57 by kadferna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
+#include "AForm.hpp"
+#include <iostream>
+#include <string>
+
+class Intern
+{
+public:
+    Intern();
+    Intern(const Intern &other);
+    Intern &operator=(const Intern &other);
+    ~Intern();
+
+    AForm *makeForm(const std::string &formName, const std::string &target) const;
+
+private:
+    typedef AForm *(Intern::*FormCreator)(const std::string &) const;
+};
+
+std::ostream &operator<<(std::ostream &os, Intern const &other);
+
+#endif

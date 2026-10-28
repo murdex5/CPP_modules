@@ -24,3 +24,7 @@ It's like when a Karen comes in and tries to have an argument with you, but you 
 # EX00
 
 In this peticular exersice is about basics of **Try/Catch and Exceptions** statements.
+
+### Important
+
+in ex03 i've overloaded the wrong function i will fix it in the meantime

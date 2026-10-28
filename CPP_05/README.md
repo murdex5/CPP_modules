@@ -27,4 +27,4 @@ In this peticular exersice is about basics of **Try/Catch and Exceptions** state
 
 ### Important
 
-in ex03 i've overloaded the wrong function i will fix it in the meantime
+in CPP_05 - ex03 i've overloaded the wrong function i will fix it in the meantime

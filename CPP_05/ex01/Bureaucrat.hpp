@@ -9,9 +9,6 @@
 /*   Updated: 2026/09/11 13:13:55 by kadferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
-
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 

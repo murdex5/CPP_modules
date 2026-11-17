@@ -94,3 +94,36 @@ bool ScalarConverter::is_float(std::string literal)
     }
     return (frac > 0 && i == len - 1);
 }
+
+bool ScalarConverter::is_double(std::string literal)
+{
+    size_t i;
+    size_t dbd; // Digitis befoire dots
+    size_t dad; // Digits after dots
+
+    dbd = 0;
+    dad = 0;
+    i = 0;
+    if (literal.empty())
+        return false;
+    if (literal[0] == '-' || literal[0] == '+')
+        i = 1;
+    while (literal[i] != '\0' && literal[i] != '.')
+    {
+        if (!(literal[i] >= '0' && literal[i] <= '9'))
+            return (false);
+        dbd++;
+        i++;
+    }
+    if (literal[i] != '.')
+        return false;
+    i++;
+    while (literal[i] != '\0')
+    {
+        if (!(literal[i] >= '0' && literal[i] <= '9'))
+            return (false);
+        dad++;
+        i++;
+    }
+    return true;
+}

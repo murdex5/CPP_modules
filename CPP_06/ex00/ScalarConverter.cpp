@@ -74,7 +74,7 @@ bool ScalarConverter::is_float(std::string literal)
     i = 0;
     digits = 0;
 
-    if (len < 3 || (literal[len - 1] = 'f' && literal[len - 1] != 'F'))
+    if (len < 3 || (literal[len - 1] != 'f' && literal[len - 1] != 'F'))
         return (false);
     if (literal[0] == '-' || literal[0] == '+')
         i = 1;
@@ -125,5 +125,11 @@ bool ScalarConverter::is_double(std::string literal)
         dad++;
         i++;
     }
+    if (dbd == 0 && dad == 0)
+        return false;
     return true;
+}
+
+void ScalarConverter::detectType(std::string literal)
+{
 }

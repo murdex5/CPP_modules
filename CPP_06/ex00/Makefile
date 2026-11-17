@@ -5,9 +5,9 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDES = ./ScalarConvertor.hpp
+INCLUDES = ./ScalarConverter.hpp
 
-SRCS = ./ScalarConvertor.cpp \
+SRCS = ./ScalarConverter.cpp \
 		./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

@@ -1,4 +1,4 @@
-NAME = EX00
+NAME = convert
 
 
 CC = g++

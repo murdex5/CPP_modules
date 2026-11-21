@@ -132,4 +132,92 @@ bool ScalarConverter::is_double(std::string literal)
 
 void ScalarConverter::detectType(std::string literal)
 {
+    if (handle_pseudo_literals(literal) == false)
+    {
+        if (is_int(literal))
+            literal_to_int(literal);
+    }
+}
+
+bool ScalarConverter::handle_pseudo_literals(std::string literal)
+{
+    std::string charMsg = "char: impossible";
+    std::string intMsg = "int: impossible";
+
+    if (literal == "nanf" || literal == "nan")
+    {
+        std::cout << charMsg << std::endl
+                  << intMsg << std::endl;
+        std::cout << "float: nanf" << std::endl
+                  << "double: nan" << std::endl;
+        return (true);
+    }
+    else if (literal == "-inff" || literal == "-inf")
+    {
+        std::cout << charMsg << std::endl
+                  << intMsg << std::endl;
+        std::cout << "float: -inff" << std::endl
+                  << "double: -inf" << std::endl;
+        return (true);
+    }
+    else if (literal == "inff" || literal == "inf" || literal == "+inff" || literal == "+inf")
+    {
+        std::cout << charMsg << std::endl
+                  << intMsg << std::endl;
+        std::cout << "float: inff" << std::endl
+                  << "double: inf" << std::endl;
+        return (true);
+    }
+    return (false);
+}
+
+void ScalarConverter::literal_to_int(const std::string &literal)
+{
+    size_t i;
+    bool neg;
+    double d;
+
+    i = 0;
+    neg = false;
+    d = 0.0;
+    if (literal[i] == '+' || literal[i] == '-')
+    {
+        neg = (literal[i] == '-');
+        i++;
+    }
+    while (i < literal.length())
+    {
+        d = d * 10.0 + (literal[i] - '0');
+        i++;
+    }
+    if (neg)
+        d = -d;
+    std::cout << "char: ";
+    if (d < 0 || d > 127)
+        std::cout << "impossible" << std::endl;
+    else if (d < 32 || d >= 127)
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << "'" << static_cast<char>(static_cast<int>(d)) << "'" << std::endl;
+
+    std::cout << "int: ";
+    if (d < INT_MIN || d > INT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<int>(d) << std::endl;
+
+    std::cout << std::fixed;
+    std::cout.precision(1);
+
+    std::cout << "float: ";
+    if (d > FLT_MAX || d < -FLT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<float>(d) << "f" << std::endl;
+
+    std::cout << "double: ";
+    if (d > DBL_MAX || d < -DBL_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << d << std::endl;
 }

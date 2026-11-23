@@ -1,4 +1,4 @@
-NAME = serialize
+NAME = irt
 
 CC = g++
 
@@ -10,9 +10,6 @@ INCLUDES = ./Base.hpp \
 			./C.hpp
 
 SRCS = ./Base.cpp \
-		./A.cpp \
-		./B.cpp \
-		./C.cpp
 		./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

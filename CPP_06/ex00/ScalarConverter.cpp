@@ -134,6 +134,8 @@ void ScalarConverter::detectType(std::string literal)
 {
     if (handle_pseudo_literals(literal) == false)
     {
+        if (is_char(literal))
+            literal_to_char(literal);
         if (is_int(literal))
             literal_to_int(literal);
     }
@@ -238,4 +240,76 @@ void ScalarConverter::literal_to_int(const std::string &literal)
         std::cout << "impossible" << std::endl;
     else
         std::cout << d << std::endl;
+}
+
+void ScalarConverter::literal_to_double(const std::string &literal)
+{
+    double d;
+    bool whole;
+
+    if (handle_pseudo_literals(literal) == true)
+        return;
+    d = std::atof(literal.c_str());
+
+    std::cout << "char: ";
+    if (d <= -1.0 || d >= 128.0)
+        std::cout << "impossible" << std::endl;
+    else if (static_cast<int>(d) < 32 || static_cast<int>(d) == 127)
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << "'" << static_cast<char>(static_cast<int>(d)) << "'" << std::endl;
+
+    std::cout << "int: ";
+    if (d <= -2147483649.0 || d >= 2147483648.0)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<int>(d) << std::endl;
+
+    whole = (d > -1e18 && d < 1e18 && d == static_cast<double>(static_cast<long>(d))) || d >= 1e18 || d <= -1e18;
+    if (whole)
+        std::cout << std::fixed << std::setprecision(1);
+
+    std::cout << "float: ";
+    if (d > FLT_MAX || d < -FLT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<float>(d) << "f" << std::endl;
+
+    std::cout << "double: " << d << std::endl;
+}
+
+void ScalarConverter::literal_to_float(const std::string &literal)
+{
+    double d;
+    bool whole;
+
+    if (handle_pseudo_literals(literal) == true)
+        return;
+    d = std::strtod(literal.c_str(), NULL);
+
+    std::cout << "char: ";
+    if (d <= -1.0 || d >= 128.0)
+        std::cout << "impossible" << std::endl;
+    else if (static_cast<int>(d) < 32 || static_cast<int>(d) == 127)
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << "'" << static_cast<char>(static_cast<int>(d)) << "'" << std::endl;
+
+    std::cout << "int: ";
+    if (d <= -2147483649.0 || d >= 2147483648.0)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<int>(d) << std::endl;
+
+    whole = (d >= 1e18 || d <= -1e18 || d == static_cast<double>(static_cast<long>(d)));
+    if (whole)
+        std::cout << std::fixed << std::setprecision(1);
+
+    std::cout << "float: ";
+    if (d > FLT_MAX || d < -FLT_MAX)
+        std::cout << "impossible" << std::endl;
+    else
+        std::cout << static_cast<float>(d) << "f" << std::endl;
+
+    std::cout << "double: " << d << std::endl;
 }

@@ -31,16 +31,16 @@ private:
 public:
     ScalarConverter &operator=(ScalarConverter const &src);
     ~ScalarConverter();
-    static void detectType(std::string literal);
-    static bool is_char(std::string literal);
-    static bool is_int(std::string literal);
-    static bool is_float(std::string literal);
-    static bool is_double(std::string lietral);
+    static void detectType(const std::string &literal);
+    static bool is_char(const std::string &literal);
+    static bool is_int(const std::string &literal);
+    static bool is_float(const std::string &literal);
+    static bool is_double(const std::string &literal);
     static void literal_to_char(const std::string &literal);
     static void literal_to_int(const std::string &literal);
     static void literal_to_float(const std::string &literal);
     static void literal_to_double(const std::string &literal);
-    static bool handle_pseudo_literals(std::string literal);
+    static bool handle_pseudo_literals(const std::string &literal);
 };
 
 #endif

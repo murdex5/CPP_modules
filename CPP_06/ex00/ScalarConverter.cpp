@@ -36,14 +36,12 @@ ScalarConverter::~ScalarConverter()
     std::cout << "Deconstructor called" << std::endl;
 };
 
-bool ScalarConverter::is_char(std::string literal)
+bool ScalarConverter::is_char(const std::string &literal)
 {
-    if (isalpha(literal[0] && literal.length() == 1))
-        return true;
-    return false;
+    return (literal.length() == 1 && !(literal[0] >= '0' && literal[0] <= '9'));
 }
 
-bool ScalarConverter::is_int(std::string literal)
+bool ScalarConverter::is_int(const std::string &literal)
 {
     size_t i = 0;
 
@@ -64,7 +62,7 @@ bool ScalarConverter::is_int(std::string literal)
     return (temp >= std::numeric_limits<int>::min() && temp <= std::numeric_limits<int>::max());
 }
 
-bool ScalarConverter::is_float(std::string literal)
+bool ScalarConverter::is_float(const std::string &literal)
 {
     size_t len;
     size_t i;
@@ -95,7 +93,7 @@ bool ScalarConverter::is_float(std::string literal)
     return (frac > 0 && i == len - 1);
 }
 
-bool ScalarConverter::is_double(std::string literal)
+bool ScalarConverter::is_double(const std::string &literal)
 {
     size_t i;
     size_t dbd; // Digitis befoire dots
@@ -130,18 +128,23 @@ bool ScalarConverter::is_double(std::string literal)
     return true;
 }
 
-void ScalarConverter::detectType(std::string literal)
+void ScalarConverter::detectType(const std::string &literal)
 {
-    if (handle_pseudo_literals(literal) == false)
-    {
-        if (is_char(literal))
-            literal_to_char(literal);
-        if (is_int(literal))
-            literal_to_int(literal);
-    }
+    if (handle_pseudo_literals(literal))
+        return;
+    if (is_char(literal))
+        literal_to_char(literal);
+    else if (is_int(literal))
+        literal_to_int(literal);
+    else if (is_float(literal))
+        literal_to_float(literal);
+    else if (is_double(literal))
+        literal_to_double(literal);
+    else
+        std::cout << "Invalid literal" << std::endl;
 }
 
-bool ScalarConverter::handle_pseudo_literals(std::string literal)
+bool ScalarConverter::handle_pseudo_literals(const std::string &literal)
 {
     std::string charMsg = "char: impossible";
     std::string intMsg = "int: impossible";

@@ -1,4 +1,4 @@
-NAME = irt
+NAME = funcs
 
 CC = g++
 

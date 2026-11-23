@@ -171,6 +171,24 @@ bool ScalarConverter::handle_pseudo_literals(std::string literal)
     return (false);
 }
 
+void ScalarConverter::literal_to_char(const std::string &literal)
+{
+    unsigned char c;
+
+    c = static_cast<unsigned char>(literal[0]);
+    std::cout << "char: ";
+    if (c > 127)
+        std::cout << "impossible" << std::endl;
+    else if (c < 32 || c == 127)
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << "'" << static_cast<char>(c) << "'" << std::endl;
+    std::cout << "int: " << static_cast<int>(c) << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(c) << std::endl;
+}
+
 void ScalarConverter::literal_to_int(const std::string &literal)
 {
     size_t i;

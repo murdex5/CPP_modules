@@ -1,28 +1,25 @@
-NAME = array
+NAME     = array
+CC       = g++
+CFLAGS   = -Wall -Wextra -Werror -std=c++98
 
-CC = g++
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-INCLUDES = ./Array.hpp 
-
-SRCS = ./main.cpp
-
-OBJS = $(SRCS:.cpp=.o)
+SRCS     = main.cpp
+OBJS     = $(SRCS:.cpp=.o)
+HEADERS  = Array.hpp Array.tpp
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
-	
+	rm -f $(NAME)
+
 re: fclean all
+
+.PHONY: all clean fclean re
